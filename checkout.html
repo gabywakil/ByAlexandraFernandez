@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - By Alexandra Fernández</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+<div id="mobile-wrapper">
+    <div id="mobile-content">
+        
+        <!-- NAVEGACIÓN -->
+        <div class="nav-header">
+            <a href="catalogo.html" class="nav-back">← Volver</a>
+            <h2 class="nav-title">Checkout</h2>
+            <div></div>
+        </div>
+
+        <!-- CONTENIDO DEL CHECKOUT -->
+        <div class="checkout-container">
+            
+            <!-- RESUMEN DEL PEDIDO -->
+            <div class="order-summary">
+                <h3 class="section-title">Resumen del Pedido</h3>
+                <div id="orderSummary" class="summary-items"></div>
+                <div class="summary-total">
+                    <span class="total-label">Total</span>
+                    <span class="total-amount" id="orderTotal">$0 COP</span>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE DATOS -->
+            <form class="checkout-form" id="checkoutForm">
+                
+                <!-- DATOS PERSONALES -->
+                <div class="form-section">
+                    <h3 class="section-title">Datos Personales</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nombre *</label>
+                        <input type="text" id="firstName" class="form-input" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Apellido *</label>
+                        <input type="text" id="lastName" class="form-input" placeholder="Tu apellido" required>
+                    </div>
+                </div>
+
+                <!-- MÉTODO DE PAGO -->
+                <div class="form-section">
+                    <h3 class="section-title">Método de Pago</h3>
+                    
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="efectivo" checked>
+                            <div class="option-content">
+                                <span class="option-icon">💵</span>
+                                <span class="option-text">Efectivo</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="transferencia">
+                            <div class="option-content">
+                                <span class="option-icon">🏦</span>
+                                <span class="option-text">Transferencia</span>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="tarjeta">
+                            <div class="option-content">
+                                <span class="option-icon">💳</span>
+                                <span class="option-text">Tarjeta</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- MÉTODO DE ENTREGA -->
+                <div class="form-section">
+                    <h3 class="section-title">Método de Entrega</h3>
+                    
+                    <div class="delivery-options">
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="pickup" id="deliveryPickup" checked>
+                            <div class="option-content">
+                                <span class="option-icon">🏬</span>
+                                <div class="option-text">
+                                    <span class="option-name">Recoger en Tienda</span>
+                                    <span class="option-desc">Disponible en 24 horas</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="delivery" id="deliveryHome">
+                            <div class="option-content">
+                                <span class="option-icon">🚚</span>
+                                <div class="option-text">
+                                    <span class="option-name">Envío a Domicilio</span>
+                                    <span class="option-desc">Entrega en 3-5 días hábiles</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- DIRECCIÓN (solo si es delivery) -->
+                    <div class="form-group" id="addressField" style="display: none;">
+                        <label class="form-label">Dirección de Entrega *</label>
+                        <textarea id="address" class="form-textarea" placeholder="Calle, número, apartamento, barrio, ciudad..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- BOTÓN FINAL -->
+                <button type="submit" class="btn-submit">
+                    <span class="btn-icon">📱</span>
+                    Finalizar Compra por Instagram
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

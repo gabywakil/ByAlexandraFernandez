@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - By Alexandra Fernández</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+<div id="mobile-wrapper">
+    <div id="mobile-content">
+        
+        <!-- NAVEGACIÓN SUPERIOR -->
+        <div class="nav-header">
+            <a href="index.html" class="nav-back">← Inicio</a>
+            <h2 class="nav-title">Catálogo</h2>
+            <div class="nav-action" onclick="openCart()">
+                🛒 <span class="cart-badge" id="cartBadge">0</span>
+            </div>
+        </div>
+
+        <!-- HERO DEL CATÁLOGO -->
+        <div class="catalog-hero">
+            <h1 class="catalog-title">ALTRUISMO</h1>
+            <p class="catalog-subtitle">Colección S/S 2026</p>
+        </div>
+
+        <!-- GRID DE PRODUCTOS -->
+        <div class="products-grid" id="productsContainer">
+            
+            <!-- PRODUCTO 1: Camisa Bondad -->
+            <article class="product-card" data-product="camisa-bondad" data-name="Camisa Bondad" data-price="85000">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=600" alt="Camisa Bondad" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Camisa Bondad</h3>
+                    <p class="product-type">Camisa</p>
+                    <p class="product-price">$85.000 COP</p>
+                    
+                    <label class="option-label">Talla</label>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-size="XS">XS</button>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                    
+                    <label class="option-label">Cantidad</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn qty-minus">−</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn qty-plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-cart">Agregar al Carrito</button>
+                </div>
+            </article>
+
+            <!-- PRODUCTO 2: Camisa Gratitud -->
+            <article class="product-card" data-product="camisa-gratitud" data-name="Camisa Gratitud" data-price="85000">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=600" alt="Camisa Gratitud" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Camisa Gratitud</h3>
+                    <p class="product-type">Camisa</p>
+                    <p class="product-price">$85.000 COP</p>
+                    
+                    <label class="option-label">Talla</label>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-size="XS">XS</button>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                    
+                    <label class="option-label">Cantidad</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn qty-minus">−</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn qty-plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-cart">Agregar al Carrito</button>
+                </div>
+            </article>
+
+            <!-- PRODUCTO 3: Vestido Testimonio -->
+            <article class="product-card" data-product="vestido-testimonio" data-name="Vestido Testimonio" data-price="125000">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600" alt="Vestido Testimonio" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Vestido Testimonio</h3>
+                    <p class="product-type">Vestido</p>
+                    <p class="product-price">$125.000 COP</p>
+                    
+                    <label class="option-label">Talla</label>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-size="XS">XS</button>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                    
+                    <label class="option-label">Cantidad</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn qty-minus">−</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn qty-plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-cart">Agregar al Carrito</button>
+                </div>
+            </article>
+
+            <!-- PRODUCTO 4: Pantalón Armonía -->
+            <article class="product-card" data-product="pantalon-armonia" data-name="Pantalón Armonía" data-price="95000">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?q=80&w=600" alt="Pantalón Armonía" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Pantalón Armonía</h3>
+                    <p class="product-type">Pantalón</p>
+                    <p class="product-price">$95.000 COP</p>
+                    
+                    <label class="option-label">Talla</label>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-size="XS">XS</button>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                    
+                    <label class="option-label">Cantidad</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn qty-minus">−</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn qty-plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-cart">Agregar al Carrito</button>
+                </div>
+            </article>
+
+            <!-- PRODUCTO 5: Short Latido -->
+            <article class="product-card" data-product="short-latido" data-name="Short Latido" data-price="75000">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=600" alt="Short Latido" class="product-image">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Short Latido</h3>
+                    <p class="product-type">Short</p>
+                    <p class="product-price">$75.000 COP</p>
+                    
+                    <label class="option-label">Talla</label>
+                    <div class="size-buttons">
+                        <button class="size-btn" data-size="XS">XS</button>
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                    
+                    <label class="option-label">Cantidad</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn qty-minus">−</button>
+                        <input type="number" class="qty-input" value="1" min="1" max="10" readonly>
+                        <button class="qty-btn qty-plus">+</button>
+                    </div>
+                    
+                    <button class="btn-add-cart">Agregar al Carrito</button>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- MODAL DEL CARRITO -->
+        <div class="cart-modal" id="cartModal">
+            <div class="cart-overlay" onclick="closeCart()"></div>
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h2 class="cart-title">Tu Carrito</h2>
+                    <button class="cart-close" onclick="closeCart()">✕</button>
+                </div>
+                
+                <div class="cart-body" id="cartBody">
+                    <div class="cart-empty" id="cartEmpty">
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                </div>
+                
+                <div class="cart-footer" id="cartFooter" style="display: none;">
+                    <div class="cart-total">
+                        <span class="total-label">Total</span>
+                        <span class="total-amount" id="cartTotal">$0 COP</span>
+                    </div>
+                    <a href="checkout.html" class="btn-checkout">Ir a Checkout</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/catalogo.js"></script>
+
+</body>
+</html>

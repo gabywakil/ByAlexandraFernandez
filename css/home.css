@@ -1,0 +1,206 @@
+/* ============================================
+   HOME - PÁGINA DE BIENVENIDA
+   ============================================ */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --rojo: #9e0004;
+    --azul: #1c3166;
+    --amarillo: #f6d86b;
+    --beige: #e1c78c;
+    --marfil: #F6F4F0;
+    --carbon: #1E1E1E;
+    --gris: #8C8C8C;
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-body);
+}
+
+/* MOBILE WRAPPER - Simula pantalla de celular */
+#mobile-wrapper {
+    width: 100%;
+    max-width: 430px;
+    height: 932px;
+    max-height: 95vh;
+    background-color: var(--marfil);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 0 0 10px #1a1a1a,
+        0 0 0 12px #3a3a3a,
+        0 20px 60px rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+}
+
+/* Notch del iPhone */
+#mobile-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 30px;
+    background-color: #1a1a1a;
+    border-radius: 0 0 20px 20px;
+    z-index: 9999;
+}
+
+#mobile-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#mobile-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* HOME SECTION */
+.home-section {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--marfil) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px 60px;
+    text-align: center;
+}
+
+.home-logo {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 50px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-title {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--azul);
+    margin-bottom: 24px;
+    line-height: 1.1;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.home-subtitle {
+    font-size: 16px;
+    color: var(--gris);
+    margin-bottom: 60px;
+    line-height: 1.7;
+    max-width: 320px;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.home-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 340px;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.menu-btn {
+    padding: 20px 40px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: white;
+    color: var(--azul);
+    border: 2px solid var(--beige);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-btn:hover {
+    background-color: var(--amarillo);
+    color: var(--azul);
+    border-color: var(--amarillo);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-btn.primary {
+    background-color: var(--rojo);
+    color: white;
+    border-color: var(--rojo);
+}
+
+.menu-btn.primary:hover {
+    background-color: #7a0003;
+}
+
+/* FOOTER */
+.home-footer {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.season-badge {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gris);
+    text-transform: uppercase;
+}
+
+/* RESPONSIVE - Para móviles reales */
+@media (max-width: 430px) {
+    body {
+        background-color: var(--marfil);
+    }
+    
+    #mobile-wrapper {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    #mobile-wrapper::before {
+        display: none;
+    }
+}
