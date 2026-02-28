@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrito | Nombre de Marca</title>
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="carrito.css" />
+</head>
+<body>
+  <div class="desktop-gate" aria-hidden="true">
+    <div class="desktop-gate__card">
+      <p class="kicker">Mobile only</p>
+      <h2>Abre en tu teléfono</h2>
+      <p>Esta web está diseñada para verse solo en móvil.</p>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="icon-btn" href="catalogo.html" aria-label="Volver">←</a>
+    <div class="brand">
+      <span class="brand__dot"></span>
+      <span class="brand__name">Carrito</span>
+    </div>
+    <button class="chip" id="clearCartBtn" type="button">Vaciar</button>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <p class="kicker">Resumen</p>
+      <h1 class="h1">Tu pedido</h1>
+      <p class="muted">Revisa, completa tus datos y finaliza por Instagram DM.</p>
+    </section>
+
+    <section class="card-block">
+      <div id="cartList" class="cart"></div>
+
+      <div class="totals">
+        <div class="totals__row">
+          <span>Subtotal</span>
+          <strong id="subtotal">$0</strong>
+        </div>
+        <div class="totals__row totals__row--big">
+          <span>Total</span>
+          <strong id="total">$0</strong>
+        </div>
+      </div>
+
+      <a class="btn btn--ghost w-full" href="catalogo.html">Seguir comprando</a>
+    </section>
+
+    <section class="card-block">
+      <p class="kicker">Datos</p>
+      <h2 class="h2">Finalizar compra</h2>
+
+      <form id="checkoutForm" class="form">
+        <div class="row">
+          <div class="field">
+            <label>Nombre</label>
+            <input class="input" name="nombre" required placeholder="Ej: Sofía" />
+          </div>
+          <div class="field">
+            <label>Apellido</label>
+            <input class="input" name="apellido" required placeholder="Ej: Pérez" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Método de pago</label>
+          <select class="input" name="pago" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>Transferencia</option>
+            <option>Nequi / Daviplata</option>
+            <option>Tarjeta (link)</option>
+            <option>Efectivo (solo pickup)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Entrega</label>
+          <div class="segmented" role="group" aria-label="Tipo de entrega">
+            <button type="button" class="seg is-active" data-ship="pickup">Pickup</button>
+            <button type="button" class="seg" data-ship="delivery">Delivery</button>
+          </div>
+          <input type="hidden" name="entrega" value="pickup" />
+        </div>
+
+        <div class="field" id="addressField" style="display:none;">
+          <label>Dirección</label>
+          <input class="input" name="direccion" placeholder="Ej: Calle 12 # 34-56, Apto 301" />
+        </div>
+
+        <button class="btn btn--primary w-full" type="submit" id="finalizeBtn">
+          Finalizar compra (Instagram DM)
+        </button>
+
+        <p class="hint">
+          * Se abrirá Instagram con el mensaje del pedido listo para enviar.
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación inferior">
+    <a href="index.html" class="bottom-nav__item">Home</a>
+    <a href="catalogo.html" class="bottom-nav__item">Catálogo</a>
+    <a href="colecciones.html" class="bottom-nav__item">Colecciones</a>
+    <a href="historia.html" class="bottom-nav__item">Historia</a>
+  </nav>
+
+  <!-- Import PRODUCTS from catalogo.js first -->
+  <script src="catalogo.js"></script>
+  <script src="carrito.js"></script>
+</body>
+</html>
