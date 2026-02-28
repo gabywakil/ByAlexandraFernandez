@@ -2,10 +2,13 @@
 // CHECKOUT - FUNCIONALIDAD
 // ============================================
 
-const INSTAGRAM_USERNAME = 'byalexandrafernandez'; // Cambiar por el usuario real
+const INSTAGRAM_USERNAME = 'byalexandrafernandez'; // Usuario sin @
 let cart = [];
 
-// Inicializar
+// ============================================
+// INICIALIZAR
+// ============================================
+
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
     renderOrderSummary();
@@ -25,7 +28,6 @@ function loadCart() {
         }
     }
     
-    // Si el carrito está vacío, redirigir al catálogo
     if (cart.length === 0) {
         alert('Tu carrito está vacío');
         window.location.href = 'catalogo.html';
@@ -40,10 +42,8 @@ function renderOrderSummary() {
     const orderSummary = document.getElementById('orderSummary');
     const orderTotal = document.getElementById('orderTotal');
     
-    // Limpiar resumen
     orderSummary.innerHTML = '';
     
-    // Renderizar cada item
     cart.forEach(item => {
         const itemDiv = document.createElement('div');
         itemDiv.className = 'summary-item';
@@ -54,7 +54,6 @@ function renderOrderSummary() {
         orderSummary.appendChild(itemDiv);
     });
     
-    // Calcular y mostrar total
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     orderTotal.textContent = `$${total.toLocaleString('es-CO')} COP`;
 }
@@ -98,77 +97,107 @@ function setupForm() {
 // ENVIAR A INSTAGRAM
 // ============================================
 
-function sendToInstagram() {
-    // Obtener datos del formulario
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const payment = document.querySelector('input[name="payment"]:checked').value;
-    const delivery = document.querySelector('input[name="delivery"]:checked').value;
-    const address = document.getElementById('address').value;
-    
-    // Validar datos
+async function sendToInstagram() {
+
+    // Obtener datos
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const payment = document.querySelector('input[name="payment"]:checked');
+    const delivery = document.querySelector('input[name="delivery"]:checked');
+    const address = document.getElementById('address').value.trim();
+
+    // Validaciones
     if (!firstName || !lastName) {
         alert('Por favor completa todos los campos requeridos');
         return;
     }
-    
-    if (delivery === 'delivery' && !address) {
+
+    if (!payment) {
+        alert('Selecciona un método de pago');
+        return;
+    }
+
+    if (!delivery) {
+        alert('Selecciona método de entrega');
+        return;
+    }
+
+    if (delivery.value === 'delivery' && !address) {
         alert('Por favor ingresa tu dirección de entrega');
         return;
     }
-    
-    // Construir mensaje
+
+    // ============================================
+    // CONSTRUIR MENSAJE
+    // ============================================
+
     let message = `Hola! 👋 Quiero realizar el siguiente pedido:\n\n`;
     message += `📦 PEDIDO - COLECCIÓN ALTRUISMO S/S 2026\n`;
     message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-    
-    // Productos
+
     cart.forEach(item => {
         message += `• ${item.quantity}x ${item.name}\n`;
         message += `  Talla: ${item.size}\n`;
         message += `  Precio: $${(item.price * item.quantity).toLocaleString('es-CO')} COP\n\n`;
     });
-    
-    // Total
+
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
     message += `━━━━━━━━━━━━━━━━━━━━\n`;
     message += `💰 TOTAL: $${total.toLocaleString('es-CO')} COP\n\n`;
-    
-    // Datos del cliente
+
     message += `👤 DATOS DEL CLIENTE\n`;
     message += `Nombre: ${firstName} ${lastName}\n\n`;
-    
-    // Método de pago
+
     const paymentText = {
         'efectivo': '💵 Efectivo',
         'transferencia': '🏦 Transferencia bancaria',
         'tarjeta': '💳 Tarjeta de crédito/débito'
     };
-    message += `💳 Método de pago: ${paymentText[payment]}\n\n`;
-    
-    // Método de entrega
-    if (delivery === 'delivery') {
+
+    message += `💳 Método de pago: ${paymentText[payment.value]}\n\n`;
+
+    if (delivery.value === 'delivery') {
         message += `🚚 ENVÍO A DOMICILIO\n`;
         message += `Dirección: ${address}\n`;
     } else {
         message += `🏬 RECOGER EN TIENDA\n`;
         message += `(Disponible en 24 horas)\n`;
     }
-    
+
     message += `\n¡Gracias! 🌟`;
-    
-    // Codificar mensaje
+
+    // ============================================
+    // COPIAR MENSAJE (FALLBACK SEGURO)
+    // ============================================
+
+    try {
+        await navigator.clipboard.writeText(message);
+    } catch (err) {
+        const textarea = document.createElement("textarea");
+        textarea.value = message;
+        textarea.style.position = "absolute";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+    }
+
+    // ============================================
+    // ABRIR INSTAGRAM
+    // ============================================
+
     const encodedMessage = encodeURIComponent(message);
-    
-    // Generar URL de Instagram
-    const instagramURL = `https://ig.me/m/${INSTAGRAM_USERNAME}?text=${encodedMessage}`;
-    
-    // Abrir Instagram
-    window.open(instagramURL, '_blank');
-    
-    // Opcional: Limpiar carrito
-    // sessionStorage.removeItem('altruismo_cart');
-    // setTimeout(() => {
-    //     window.location.href = 'index.html';
-    // }, 2000);
+    const igmeURL = `https://ig.me/m/${byalexandrafernandez}?text=${encodedMessage}`;
+    const fallbackURL = `https://www.instagram.com/direct/new/?username=${byalexandrafernandez}`;
+
+    // Intentar abrir app
+    window.location.href = igmeURL;
+
+    // Si no abre correctamente, abrir fallback
+    setTimeout(() => {
+        window.open(fallbackURL, '_blank');
+        alert('Si el mensaje no aparece automáticamente, ya está copiado ✅ Solo pégalo en el chat.');
+    }, 1000);
 }
