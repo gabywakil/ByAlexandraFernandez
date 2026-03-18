@@ -207,12 +207,14 @@ body {
 
 .menu-btn.primary {
     background-color: var(--amarillo);
-    color: var(--azul);
+    color: var(--carbon);
     border-color: var(--amarillo);
+    font-weight: 700;
 }
 
 .menu-btn.primary:hover {
     background-color: #e5c555;
+    color: var(--carbon);
     box-shadow: 0 4px 16px rgba(246, 216, 107, 0.6);
 }
 
