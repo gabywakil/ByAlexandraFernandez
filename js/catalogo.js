@@ -8,8 +8,68 @@ let cart = [];
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
     initializeProducts();
+    initializeImageGalleries();
     updateCartBadge();
 });
+
+// ============================================
+// GALERÍAS DE IMÁGENES
+// ============================================
+
+function initializeImageGalleries() {
+    const galleries = document.querySelectorAll('.product-images-gallery');
+    
+    galleries.forEach(gallery => {
+        const track = gallery.querySelector('.gallery-track');
+        const dots = gallery.querySelectorAll('.dot');
+        let currentIndex = 0;
+        
+        // Click en los dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', function() {
+                currentIndex = index;
+                updateGallery(track, dots, currentIndex);
+            });
+        });
+        
+        // Swipe touch para móvil
+        let startX = 0;
+        let endX = 0;
+        
+        track.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+        
+        track.addEventListener('touchmove', function(e) {
+            endX = e.touches[0].clientX;
+        });
+        
+        track.addEventListener('touchend', function() {
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > 50) { // Mínimo 50px de swipe
+                if (diff > 0 && currentIndex < 1) {
+                    currentIndex++;
+                } else if (diff < 0 && currentIndex > 0) {
+                    currentIndex--;
+                }
+                updateGallery(track, dots, currentIndex);
+            }
+        });
+    });
+}
+
+function updateGallery(track, dots, index) {
+    track.style.transform = `translateX(-${index * 50}%)`;
+    
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
 
 // ============================================
 // PRODUCTOS
