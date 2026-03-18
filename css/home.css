@@ -2,7 +2,7 @@
    HOME - PÁGINA DE BIENVENIDA
    ============================================ */
 
-   * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -77,13 +77,55 @@ body {
 .home-section {
     position: relative;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--beige) 0%, var(--marfil) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 40px 60px;
+    overflow: hidden;
+}
+
+/* IMAGEN DE FONDO */
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(28, 49, 102, 0.7) 0%,
+        rgba(28, 49, 102, 0.5) 50%,
+        rgba(28, 49, 102, 0.8) 100%
+    );
+    z-index: 2;
+}
+
+/* CONTENIDO */
+.home-content {
+    position: relative;
+    z-index: 3;
     text-align: center;
+    padding: 80px 40px 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-logo {
@@ -91,7 +133,7 @@ body {
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--azul);
+    color: var(--amarillo);
     margin-bottom: 50px;
     animation: fadeIn 1s ease-out;
 }
@@ -105,10 +147,11 @@ body {
     font-family: var(--font-display);
     font-size: 52px;
     font-weight: 600;
-    color: var(--azul);
+    color: white;
     margin-bottom: 24px;
     line-height: 1.1;
     animation: fadeInUp 1s ease-out 0.2s backwards;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes fadeInUp {
@@ -118,11 +161,12 @@ body {
 
 .home-subtitle {
     font-size: 16px;
-    color: var(--gris);
+    color: white;
     margin-bottom: 60px;
     line-height: 1.7;
     max-width: 320px;
     animation: fadeInUp 1s ease-out 0.4s backwards;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* MENÚ DE NAVEGACIÓN */
@@ -143,13 +187,14 @@ body {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     text-decoration: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     color: var(--azul);
-    border: 2px solid var(--beige);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     transition: all 0.3s ease;
     cursor: pointer;
     display: block;
+    backdrop-filter: blur(10px);
 }
 
 .menu-btn:hover {
@@ -157,7 +202,7 @@ body {
     color: var(--azul);
     border-color: var(--amarillo);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .menu-btn.primary {
@@ -168,6 +213,7 @@ body {
 
 .menu-btn.primary:hover {
     background-color: #7a0003;
+    box-shadow: 0 4px 16px rgba(158, 0, 4, 0.4);
 }
 
 /* FOOTER */
@@ -182,8 +228,9 @@ body {
 .season-badge {
     font-size: 11px;
     letter-spacing: 1px;
-    color: var(--gris);
+    color: white;
     text-transform: uppercase;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* RESPONSIVE - Para móviles reales */
