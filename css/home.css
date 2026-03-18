@@ -199,7 +199,7 @@ body {
 
 .menu-btn:hover {
     background-color: var(--amarillo);
-    color: var(--azul);
+    color: var(--carbon);
     border-color: var(--amarillo);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -213,8 +213,10 @@ body {
 }
 
 .menu-btn.primary:hover {
-    background-color: #e5c555;
+    background-color: #ddb944;
     color: var(--carbon);
+    border-color: #ddb944;
+    transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(246, 216, 107, 0.6);
 }
 
