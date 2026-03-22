@@ -174,11 +174,23 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Galería con una sola imagen */
+.product-images-gallery.single-image .gallery-track {
+    width: 100%;
+}
+
 .product-image {
     width: 50%;
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
+    background-color: var(--beige);
+    background-image: linear-gradient(135deg, var(--beige) 0%, var(--marfil) 100%);
+}
+
+/* Imagen única ocupa 100% */
+.product-images-gallery.single-image .product-image {
+    width: 100%;
 }
 
 /* Indicadores (dots) */
