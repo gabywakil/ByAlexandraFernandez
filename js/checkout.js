@@ -142,7 +142,6 @@ function sendToInstagram() {
     const paymentText = {
         'efectivo': '💵 Efectivo',
         'transferencia': '🏦 Transferencia bancaria',
-        'tarjeta': '💳 Tarjeta de crédito/débito'
     };
     message += `💳 Método de pago: ${paymentText[payment]}\n\n`;
     
@@ -161,7 +160,7 @@ function sendToInstagram() {
     const encodedMessage = encodeURIComponent(message);
     
     // Generar URL de Instagram
-    const instagramURL = `https://ig.me/m/${INSTAGRAM_USERNAME}?text=${encodedMessage}`;
+    const instagramURL = `https://ig.me/m/${byalexandrafernandez}?text=${encodedMessage}`;
     
     // Abrir Instagram
     window.open(instagramURL, '_blank');
