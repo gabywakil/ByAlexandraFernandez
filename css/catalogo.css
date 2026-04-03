@@ -533,10 +533,9 @@ body {
 }
 
 /* RESPONSIVE */
-/* RESPONSIVE */
 @media (max-width: 768px) {
     body {
-        background-color: var(--marfil);
+        background-color: white;
         align-items: flex-start;
     }
     #mobile-wrapper {
@@ -548,5 +547,16 @@ body {
         box-shadow: none;
     }
     #mobile-wrapper::before { display: none; }
+    .nav-header { top: 0; }
+
+    /* Productos en grid 2 columnas en tablets */
+    @media (min-width: 500px) {
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+    }
 }
 }
