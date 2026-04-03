@@ -213,7 +213,7 @@ function renderCart() {
     
     // Actualizar total
     const total = calculateTotal();
-    cartTotal.textContent = `$${total.toLocaleString('es-CO')} COP`;
+    cartTotal.textContent = `$${total.toLocaleString('en-US')} USD`;
 }
 
 function createCartItemElement(item, index) {
@@ -228,7 +228,7 @@ function createCartItemElement(item, index) {
                 <p class="cart-item-details">Talla: ${item.size} • Cantidad: ${item.quantity}</p>
             </div>
             <div>
-                <p class="cart-item-price">$${(item.price * item.quantity).toLocaleString('es-CO')} COP</p>
+                <p class=\"cart-item-price\">$${(item.price * item.quantity).toLocaleString('en-US')} USD</p>
                 <button class="cart-item-remove" onclick="removeFromCart(${index})">Eliminar</button>
             </div>
         </div>
