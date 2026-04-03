@@ -258,24 +258,20 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 430px) {
+@media (max-width: 768px) {
     body {
         background-color: var(--marfil);
+        align-items: flex-start;
     }
-    
     #mobile-wrapper {
         max-width: 100%;
-        height: 100vh;
-        max-height: 100vh;
+        width: 100%;
+        height: 100dvh;
+        max-height: 100dvh;
         border-radius: 0;
         box-shadow: none;
     }
-    
-    #mobile-wrapper::before {
-        display: none;
-    }
-    
-    .nav-header {
-        top: 0;
-    }
+    #mobile-wrapper::before { display: none; }
+    .nav-header { top: 0; }
+}
 }
