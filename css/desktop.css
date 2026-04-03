@@ -1,0 +1,204 @@
+/* ============================================
+   DESKTOP LAYOUT - By Alexandra Fernández
+   Solo aplica en pantallas > 769px
+   ============================================ */
+
+@media (min-width: 769px) {
+
+    body {
+        background-color: var(--marfil);
+        display: block;
+        min-height: 100vh;
+    }
+
+    #mobile-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        border-radius: 0;
+        box-shadow: none;
+        background-color: var(--marfil);
+    }
+
+    #mobile-wrapper::before { display: none; }
+
+    #mobile-content {
+        height: auto;
+        overflow: visible;
+    }
+
+    /* NAVBAR */
+    .nav-header {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 60px;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255,255,255,0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--beige);
+        z-index: 1000;
+    }
+
+    .nav-title { font-size: 22px; letter-spacing: 1px; }
+    .nav-back  { font-size: 14px; }
+
+    /* HOME */
+    .home-section { min-height: 100vh; width: 100%; }
+
+    .home-content {
+        padding: 0 80px;
+        max-width: 700px;
+        margin: 0 auto;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .home-logo    { font-size: 13px; letter-spacing: 4px; }
+    .home-title   { font-size: 80px; line-height: 1.0; max-width: 580px; }
+    .home-subtitle{ font-size: 18px; max-width: 420px; text-align: left; }
+    .home-menu    { max-width: 380px; align-items: flex-start; }
+
+    .menu-btn {
+        padding: 18px 36px;
+        font-size: 13px;
+        transition: all 0.25s ease;
+    }
+    .menu-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    /* HISTORIA */
+    .historia-container { max-width: 800px; margin: 0 auto; padding-top: 70px; }
+    .historia-hero      { height: 500px; }
+    .historia-header    { padding: 60px 60px 40px; }
+    .historia-title     { font-size: 56px; }
+    .historia-content   { padding: 50px 80px; }
+    .section-subtitle   { font-size: 28px; }
+    .section-text       { font-size: 17px; max-width: 560px; }
+    .quote-block        { margin: 60px 0; }
+    .quote-text         { font-size: 26px; }
+
+    .historia-footer {
+        padding: 50px 80px 80px;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .btn-cta, .btn-secondary { flex: 1; padding: 20px; font-size: 13px; transition: all 0.25s ease; }
+    .btn-cta:hover      { background-color: #7a0003; transform: translateY(-2px); }
+    .btn-secondary:hover{ background-color: var(--azul); color: white; transform: translateY(-2px); }
+
+    /* CATÁLOGO */
+    .catalog-hero { padding: 100px 60px 60px; text-align: center; }
+    .catalog-title { font-size: 64px; }
+    .catalog-subtitle { font-size: 14px; letter-spacing: 3px; margin-top: 8px; }
+
+    .products-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 60px 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .product-card      { display: flex; flex-direction: column; }
+    .product-images-gallery { height: 340px; }
+    .product-info      { flex: 1; display: flex; flex-direction: column; padding: 20px; }
+    .product-name      { font-size: 20px; }
+    .product-price     { font-size: 20px; margin-bottom: 16px; }
+    .size-btn          { padding: 10px; font-size: 13px; }
+    .btn-add-cart      { margin-top: auto; transition: all 0.25s ease; }
+    .btn-add-cart:hover{ background-color: var(--rojo); transform: translateY(-1px); }
+
+    .cart-modal   { align-items: center; justify-content: center; }
+    .cart-content { width: 480px; max-width: 90vw; max-height: 80vh; border-radius: 16px; }
+
+    /* CHECKOUT — dos columnas */
+    .checkout-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 100px 40px 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .order-summary { position: sticky; top: 90px; }
+    .checkout-form { gap: 24px; }
+
+    .btn-submit { transition: all 0.25s ease; }
+    .btn-submit:hover {
+        background-color: #7a0003;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(158, 0, 4, 0.35);
+    }
+
+    /* COLECCIONES */
+    .colecciones-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 100px 60px 80px;
+        gap: 60px;
+    }
+
+    .coleccion-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    .coleccion-images   { display: flex; flex-direction: column; }
+    .coleccion-image.main { height: 360px; flex: 1; }
+    .gallery-image      { height: 160px; }
+    .coleccion-content  { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .coleccion-title    { font-size: 44px; }
+    .btn-coleccion      { transition: all 0.25s ease; }
+    .btn-coleccion:hover{ background-color: #7a0003; transform: translateY(-2px); }
+
+    /* SERVICIOS */
+    .servicios-hero { padding: 100px 60px 80px; text-align: center; }
+    .hero-title     { font-size: 64px; }
+    .hero-description { font-size: 17px; max-width: 520px; }
+
+    .servicios-intro { max-width: 700px; margin: 0 auto; padding: 50px 40px 20px; }
+
+    .servicios-grid {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 60px 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .servicio-card { display: flex; flex-direction: column; }
+    .card-body     { flex: 1; display: flex; flex-direction: column; }
+    .card-btn      { margin-top: auto; transition: all 0.25s ease; }
+
+    .servicio-card.diseno   .card-btn:hover { background-color: #7a0003; transform: translateY(-1px); }
+    .servicio-card.asesoria .card-btn:hover { background-color: #0f1e45; transform: translateY(-1px); }
+    .servicio-card.colabs   .card-btn:hover { background-color: #ddb944; transform: translateY(-1px); }
+
+    .servicios-quote  { max-width: 600px; margin: 0 auto 50px; }
+
+    .servicios-footer {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px 40px 80px;
+        flex-direction: row;
+    }
+
+    .servicios-footer .btn-cta,
+    .servicios-footer .btn-secondary { flex: 1; transition: all 0.25s ease; }
+    .servicios-footer .btn-cta:hover     { background-color: #7a0003; transform: translateY(-2px); }
+    .servicios-footer .btn-secondary:hover { background-color: var(--azul); color: white; transform: translateY(-2px); }
+}
