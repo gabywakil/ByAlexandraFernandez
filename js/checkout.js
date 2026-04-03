@@ -3,7 +3,7 @@
 // By Alexandra Fernández
 // ============================================
 
-const WA_NUMBER = 'TUNUMERO'; // Ej: 573001234567 — sin + ni espacios
+const WA_NUMBER = '584141886532'; // Ej: 573001234567 — sin + ni espacios
 let cart = [];
 
 document.addEventListener('DOMContentLoaded', function() {
