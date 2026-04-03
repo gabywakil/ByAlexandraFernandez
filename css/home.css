@@ -236,11 +236,10 @@ body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* RESPONSIVE - Para móviles reales */
 /* RESPONSIVE */
 @media (max-width: 768px) {
     body {
-        background-color: white;
+        background-color: var(--marfil);
         align-items: flex-start;
     }
     #mobile-wrapper {
@@ -252,16 +251,5 @@ body {
         box-shadow: none;
     }
     #mobile-wrapper::before { display: none; }
-    .nav-header { top: 0; }
-
-    /* Productos en grid 2 columnas en tablets */
-    @media (min-width: 500px) {
-        .products-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 20px;
-        }
-    }
 }
 }
