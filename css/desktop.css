@@ -7,9 +7,14 @@
 
     /* RESET DEL MOCKUP */
     body {
-        background-color: #1a1a1a !important;
+        background-color: var(--marfil) !important;
         display: block !important;
         min-height: 100vh;
+    }
+
+    /* Home: fondo oscuro solo para esa página */
+    body:has(.home-section) {
+        background-color: #1a1a1a !important;
     }
 
     div#mobile-wrapper {
@@ -34,7 +39,6 @@
     /* ========================================
        HOME — diseño editorial de lujo
     ======================================== */
-
     .home-section {
         min-height: 100vh !important;
         width: 100% !important;
@@ -82,7 +86,6 @@
         padding-left: 80px !important;
     }
 
-    /* Navbar flotante superior */
     .home-logo {
         position: fixed !important;
         top: 0 !important;
@@ -94,7 +97,6 @@
         margin: 0 !important;
         font-size: 11px !important;
         letter-spacing: 5px !important;
-        text-transform: uppercase !important;
         color: rgba(255,255,255,0.9) !important;
         display: flex !important;
         align-items: center !important;
@@ -112,7 +114,6 @@
 
     .home-title {
         font-size: 72px !important;
-        font-weight: 600 !important;
         line-height: 1.0 !important;
         color: white !important;
         margin-bottom: 20px !important;
@@ -130,7 +131,6 @@
         font-weight: 300 !important;
     }
 
-    /* Botones en fila horizontal */
     .home-menu {
         display: flex !important;
         flex-direction: row !important;
@@ -144,7 +144,6 @@
         font-size: 11px !important;
         font-weight: 600 !important;
         letter-spacing: 2px !important;
-        text-transform: uppercase !important;
         text-decoration: none !important;
         border-radius: 3px !important;
         transition: all 0.25s ease !important;
@@ -184,7 +183,7 @@
     }
 
     /* ========================================
-       PÁGINAS INTERNAS — navbar fija
+       NAVBAR — páginas internas
     ======================================== */
     .nav-header {
         position: fixed !important;
@@ -205,10 +204,34 @@
     .nav-title { font-size: 18px !important; letter-spacing: 1px !important; }
     .nav-back  { font-size: 13px !important; }
 
-    /* HISTORIA */
-    .historia-container { max-width: 860px !important; margin: 0 auto !important; padding-top: 68px !important; }
-    .historia-hero      { height: 480px !important; width: 100% !important; }
-    .hero-image         { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center top !important; }
+    /* ========================================
+       HISTORIA
+    ======================================== */
+    .historia-container {
+        max-width: 860px !important;
+        margin: 0 auto !important;
+        padding-top: 68px !important;
+        background-color: white !important;
+    }
+
+    .historia-hero {
+        height: 280px !important;
+        width: 100% !important;
+        background: linear-gradient(135deg, var(--beige) 0%, var(--marfil) 100%) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    .hero-image {
+        width: auto !important;
+        height: 220px !important;
+        max-width: 420px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+
     .historia-header    { padding: 56px 100px 36px !important; text-align: center !important; }
     .historia-title     { font-size: 56px !important; }
     .historia-content   { padding: 48px 100px 56px !important; }
@@ -216,21 +239,40 @@
     .section-text       { font-size: 16px !important; line-height: 1.9 !important; }
     .quote-block        { margin: 56px 0 !important; padding: 48px 56px !important; }
     .quote-text         { font-size: 24px !important; }
-    .historia-footer    { padding: 48px 100px 72px !important; flex-direction: row !important; gap: 16px !important; }
+
+    .historia-footer {
+        padding: 48px 100px 72px !important;
+        flex-direction: row !important;
+        gap: 16px !important;
+    }
+
     .btn-cta, .btn-secondary { flex: 1 !important; padding: 18px !important; transition: all 0.25s ease !important; }
     .btn-cta:hover       { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
     .btn-secondary:hover { background-color: var(--azul) !important; color: white !important; transform: translateY(-2px) !important; }
 
-    /* CATÁLOGO */
-    .catalog-hero     { padding: 110px 80px 56px !important; text-align: center !important; }
+    /* ========================================
+       CATÁLOGO
+    ======================================== */
+    .catalog-hero {
+        padding: 110px 80px 56px !important;
+        text-align: center !important;
+        background: linear-gradient(135deg, var(--beige) 0%, var(--marfil) 100%) !important;
+    }
+
     .catalog-title    { font-size: 60px !important; }
     .catalog-subtitle { font-size: 12px !important; letter-spacing: 4px !important; }
+
     .products-grid {
-        max-width: 1180px !important; margin: 0 auto !important;
+        max-width: 1180px !important;
+        margin: 0 auto !important;
         padding: 32px 80px 100px !important;
-        display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
-        gap: 28px !important; flex-direction: unset !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 28px !important;
+        flex-direction: unset !important;
+        background-color: white !important;
     }
+
     .product-card           { display: flex !important; flex-direction: column !important; }
     .product-images-gallery { height: 300px !important; }
     .product-info           { flex: 1 !important; display: flex !important; flex-direction: column !important; padding: 18px !important; }
@@ -239,56 +281,123 @@
     .size-btn               { padding: 9px !important; font-size: 12px !important; }
     .btn-add-cart           { margin-top: auto !important; transition: all 0.25s ease !important; }
     .btn-add-cart:hover     { background-color: var(--rojo) !important; transform: translateY(-1px) !important; }
+
     .cart-modal   { align-items: center !important; justify-content: center !important; }
     .cart-content { width: 460px !important; max-width: 90vw !important; max-height: 80vh !important; border-radius: 16px !important; }
 
-    /* CHECKOUT */
+    /* ========================================
+       CHECKOUT
+    ======================================== */
     .checkout-container {
-        max-width: 940px !important; margin: 0 auto !important;
+        max-width: 940px !important;
+        margin: 0 auto !important;
         padding: 96px 40px 80px !important;
-        display: grid !important; grid-template-columns: 1fr 1fr !important;
-        gap: 36px !important; align-items: start !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 36px !important;
+        align-items: start !important;
     }
+
     .order-summary { position: sticky !important; top: 86px !important; }
     .checkout-form { gap: 20px !important; }
     .btn-submit:hover { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
 
-    /* COLECCIONES */
+    /* ========================================
+       COLECCIONES
+    ======================================== */
     .colecciones-container {
-        max-width: 1100px !important; margin: 0 auto !important;
-        padding: 96px 80px 80px !important; gap: 56px !important;
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+        padding: 96px 80px 80px !important;
+        gap: 56px !important;
+        background-color: var(--marfil) !important;
     }
-    .coleccion-card       { display: grid !important; grid-template-columns: 1fr 1fr !important; }
+
+    .coleccion-card {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        background-color: white !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+    }
+
     .coleccion-images     { display: flex !important; flex-direction: column !important; }
     .coleccion-image.main { height: 360px !important; flex: 1 !important; }
     .gallery-image        { height: 160px !important; }
-    .coleccion-content    { padding: 48px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
-    .coleccion-title      { font-size: 46px !important; }
-    .btn-coleccion:hover  { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
 
-    /* SERVICIOS */
-    .servicios-hero    { padding: 110px 80px 80px !important; text-align: center !important; }
-    .servicios-hero::after { background-color: var(--marfil) !important; }
-    .hero-title        { font-size: 64px !important; }
-    .hero-description  { font-size: 16px !important; max-width: 520px !important; }
-    .servicios-intro   { max-width: 720px !important; margin: 0 auto !important; padding: 48px 40px 20px !important; }
-    .servicios-grid {
-        max-width: 1100px !important; margin: 0 auto !important;
-        padding: 20px 80px 56px !important;
-        display: grid !important; grid-template-columns: repeat(3, 1fr) !important;
-        gap: 22px !important; flex-direction: unset !important;
+    .coleccion-content {
+        padding: 48px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        background-color: white !important;
     }
+
+    .coleccion-title { font-size: 46px !important; }
+    .btn-coleccion   { transition: all 0.25s ease !important; }
+    .btn-coleccion:hover { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
+
+    /* ========================================
+       SERVICIOS
+    ======================================== */
+    .servicios-hero {
+        padding: 110px 80px 80px !important;
+        text-align: center !important;
+    }
+
+    .servicios-hero::after {
+        background-color: var(--marfil) !important;
+    }
+
+    .hero-title       { font-size: 64px !important; }
+    .hero-description { font-size: 16px !important; max-width: 520px !important; }
+
+    .servicios-intro {
+        max-width: 720px !important;
+        margin: 0 auto !important;
+        padding: 48px 40px 20px !important;
+        background-color: var(--marfil) !important;
+    }
+
+    .servicios-grid {
+        max-width: 1100px !important;
+        margin: 0 auto !important;
+        padding: 20px 80px 56px !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 22px !important;
+        flex-direction: unset !important;
+        background-color: var(--marfil) !important;
+    }
+
     .servicio-card { display: flex !important; flex-direction: column !important; }
     .card-body     { flex: 1 !important; display: flex !important; flex-direction: column !important; }
     .card-btn      { margin-top: auto !important; transition: all 0.25s ease !important; }
+
     .servicio-card.diseno   .card-btn:hover { background-color: #7a0003 !important; transform: translateY(-1px) !important; }
     .servicio-card.asesoria .card-btn:hover { background-color: #0f1e45 !important; transform: translateY(-1px) !important; }
     .servicio-card.colabs   .card-btn:hover { background-color: #ddb944 !important; transform: translateY(-1px) !important; }
-    .servicios-quote  { max-width: 620px !important; margin: 0 auto 48px !important; }
-    .servicios-footer {
-        max-width: 520px !important; margin: 0 auto !important;
-        padding: 16px 40px 80px !important; flex-direction: row !important;
+
+    /* Quote sin fondo oscuro */
+    .servicios-quote {
+        max-width: 640px !important;
+        margin: 0 auto 48px !important;
+        background: linear-gradient(135deg, rgba(246,216,107,0.15) 0%, rgba(225,199,140,0.15) 100%) !important;
+        border: 2px solid var(--amarillo) !important;
     }
+
+    .quote-text   { color: var(--azul) !important; }
+    .quote-author { color: var(--rojo) !important; }
+
+    .servicios-footer {
+        max-width: 520px !important;
+        margin: 0 auto !important;
+        padding: 16px 40px 80px !important;
+        flex-direction: row !important;
+        background-color: var(--marfil) !important;
+    }
+
     .servicios-footer .btn-cta,
     .servicios-footer .btn-secondary { flex: 1 !important; transition: all 0.25s ease !important; }
     .servicios-footer .btn-cta:hover       { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
