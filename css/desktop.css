@@ -403,3 +403,43 @@
     .servicios-footer .btn-cta:hover       { background-color: #7a0003 !important; transform: translateY(-2px) !important; }
     .servicios-footer .btn-secondary:hover { background-color: var(--azul) !important; color: white !important; transform: translateY(-2px) !important; }
 }
+
+/* FOOTER CRÉDITOS — desktop */
+.footer-creditos {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    padding: 16px 20px !important;
+}
+
+.footer-by {
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+}
+
+.footer-logo {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+.footer-handle {
+    font-size: 10px !important;
+    letter-spacing: 1.5px !important;
+}
+
+/* En el home va sobre la imagen, chiquito y centrado */
+.home-section .footer-creditos {
+    position: relative !important;
+    z-index: 3 !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    padding: 20px !important;
+    opacity: 0.5 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.home-section .footer-creditos:hover {
+    opacity: 0.9 !important;
+}
