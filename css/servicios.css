@@ -445,7 +445,8 @@ body {
     justify-content: center;
     gap: 14px;
     padding: 28px 20px;
-    background-color: #1e1209;
+    background-color: var(--marfil);
+    border-top: 1px solid var(--beige);
 }
 
 .footer-by {
@@ -454,7 +455,7 @@ body {
     font-weight: 400;
     font-style: italic;
     letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--azul);
     margin: 0;
 }
 
@@ -468,8 +469,8 @@ body {
 .footer-handle {
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 2.5px;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--azul);
     margin: 0;
 }
