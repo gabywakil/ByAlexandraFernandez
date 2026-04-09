@@ -579,7 +579,7 @@ body {
     font-weight: 400;
     font-style: italic;
     letter-spacing: 2px;
-    color: var(--azul);
+    color: #1c3166;
     margin: 0;
 }
 
@@ -595,6 +595,6 @@ body {
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 2.5px;
-    color: var(--azul);
+    color: #1c3166;
     margin: 0;
 }
