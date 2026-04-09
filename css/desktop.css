@@ -404,65 +404,39 @@
     .servicios-footer .btn-secondary:hover { background-color: var(--azul) !important; color: white !important; transform: translateY(-2px) !important; }
 }
 
-/* FOOTER CRÉDITOS — desktop */
+/* FOOTER CRÉDITOS */
 .footer-creditos {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 14px !important;
-    padding: 22px 20px !important;
-}
-
-.footer-by {
-    font-size: 13px !important;
-    letter-spacing: 2px !important;
-    color: rgba(255,255,255,0.85) !important;
-}
-
-.footer-logo {
-    width: 42px !important;
-    height: 42px !important;
-}
-
-.footer-handle {
-    font-size: 12px !important;
-    letter-spacing: 2px !important;
-    color: rgba(255,255,255,0.85) !important;
-}
-
-/* En el home va sobre la imagen */
-.home-section .footer-creditos {
-    position: relative !important;
-    z-index: 3 !important;
-    background-color: transparent !important;
-    padding: 20px !important;
-    opacity: 0.75 !important;
-    transition: opacity 0.3s ease !important;
-}
-
-.home-section .footer-creditos:hover {
-    opacity: 1 !important;
-}
-
-.footer-creditos {
-    background-color: #F6F4F0 !important;
-    border-top: 1px solid #e1c78c !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 14px !important;
     padding: 28px 20px !important;
+    background-color: #F6F4F0 !important;
+    border-top: 1px solid #e1c78c !important;
 }
 
 .footer-by,
 .footer-handle {
     color: #1c3166 !important;
+    font-size: 13px !important;
+    letter-spacing: 2px !important;
+    margin: 0 !important;
 }
 
 .footer-logo {
     width: 48px !important;
     height: 48px !important;
     border-radius: 50% !important;
+}
+
+/* Home: letras blancas sobre la foto */
+.home-section .footer-creditos {
+    background-color: transparent !important;
+    border-top: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+.home-section .footer-by,
+.home-section .footer-handle {
+    color: rgba(255,255,255,0.85) !important;
 }
