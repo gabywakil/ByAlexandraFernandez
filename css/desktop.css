@@ -410,36 +410,37 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 10px !important;
-    padding: 16px 20px !important;
+    gap: 14px !important;
+    padding: 22px 20px !important;
 }
 
 .footer-by {
-    font-size: 11px !important;
-    letter-spacing: 1.5px !important;
+    font-size: 13px !important;
+    letter-spacing: 2px !important;
+    color: rgba(255,255,255,0.85) !important;
 }
 
 .footer-logo {
-    width: 28px !important;
-    height: 28px !important;
+    width: 42px !important;
+    height: 42px !important;
 }
 
 .footer-handle {
-    font-size: 10px !important;
-    letter-spacing: 1.5px !important;
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    color: rgba(255,255,255,0.85) !important;
 }
 
-/* En el home va sobre la imagen, chiquito y centrado */
+/* En el home va sobre la imagen */
 .home-section .footer-creditos {
     position: relative !important;
     z-index: 3 !important;
     background-color: transparent !important;
-    backdrop-filter: none !important;
     padding: 20px !important;
-    opacity: 0.5 !important;
+    opacity: 0.75 !important;
     transition: opacity 0.3s ease !important;
 }
 
 .home-section .footer-creditos:hover {
-    opacity: 0.9 !important;
+    opacity: 1 !important;
 }
